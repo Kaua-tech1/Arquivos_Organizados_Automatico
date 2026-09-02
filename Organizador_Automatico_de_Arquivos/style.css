@@ -60,7 +60,7 @@ body {
 }
 
 /* Estilo do Botão */
-button {
+label {
     padding: 12px 24px;
     font-size: 14px;
     border-radius: 50px;
@@ -77,13 +77,13 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+label:hover {
     background-color: #20d7f7;
     color: #071228;
     box-shadow: 0 6px 20px rgba(32, 215, 247, 0.6);
     transform: translateY(-2px);
 }
 
-button:active {
+label:active {
     transform: translateY(1px);
 }
