@@ -11,11 +11,50 @@
   <!-- Card Central com Efeito de Vidro Fosco -->
   <div class="glass-card">
     <h1>Org.Auto</h1>
-    <p>Selecione seus arquivos para organizá-los automaticamente nas pastas corretas.</p>
+    <p id="file-info">Selecione seus arquivos para organizá-los automaticamente nas pastas corretas.</p>
+    <div id="area-arquivo" style="display: none;">
+      <span id="nome-arquivo"></span>
+    <button id="btn-remover" title="remover seleção">X</button>
+    </div>
     <label for="file-input" id="file-label">Selecionar Arquivos</label>
-    <input type="file" id="file-input" multiple style="display: none;" accept=".pdf,.png,.jpg,.jpeg">
+    <input type="file" id="file-input" multiple style="display: none;" accept=".pdf,.docx,.xlsx,.jpg,.png,.txt,.mp3,.mp4">
+    <button id="organizar arquivos" onclick="organizarArquivos()" style="display: none;">Organizar Arquivos</button>
+    <div id="status"></div>
     
   </div>
+
+<!-- javascript para manipulação de arquivos e atualização da interface -->
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const fileLabel = document.getElementById('file-label');
+    const organizeButton = document.getElementById('organizar arquivos');
+    const statusDiv = document.getElementById('status');
+    const fileInfo = document.getElementById('file-info');
+    const areaArquivo = document.getElementById('area-arquivo');
+    const nomeArquivo = document.getElementById('nome-arquivo');
+
+    fileInput.addEventListener('change', () => {
+      if (this.files.length > 0) {
+        fileInfo.style.display = 'none';
+        nomeArquivo.textContent = this.files[0].name;
+        
+        if (this.files.legth > 1) {
+          nomeArquivo.textContent = this.files.ligth + ' arquivos selecionados';
+        }
+      }
+    });
+    areaArquivo.style.display = 'flex'; 
+        botaoOrganizar.style.display = 'block';
+// 3. Quando o usuário clicar no botão "X" de remover
+btnRemover.addEventListener('click', function() {
+    
+  fileInput.value = '';
+    areaArquivo.style.display = 'none';
+    botaoOrganizar.style.display = 'none';
+    // Faz o texto de instrução voltar a aparecer
+    textoInstrucao.style.display = 'block';
+});
+  </script>
 
   <!-- Fundo Animado (Vanta.js) -->
   <div id="vanta-bg"></div>

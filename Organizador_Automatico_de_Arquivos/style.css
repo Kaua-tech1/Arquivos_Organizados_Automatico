@@ -59,7 +59,7 @@ body {
     line-height: 1.5;
 }
 
-/* Estilo do Botão */
+/* Estilo do Botão "selecionar arquivos" */
 label {
     padding: 12px 24px;
     font-size: 14px;
@@ -86,4 +86,69 @@ label:hover {
 
 label:active {
     transform: translateY(1px);
+}
+
+/* Estilo do Botão "Organizar Arquivos" */
+button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #3f55ff;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(63, 85, 255, 0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 50%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #20d7f7;
+    color: #071228;
+    box-shadow: 0 6px 20px rgba(32, 215, 247, 0.6);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Organiza o nome do arquivo e o X lado a lado */
+#area-arquivo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    color: #20d7f7;
+    font-size: 0.95rem;
+}
+
+/* Estilo do botão de remover (X) */
+#btn-remover {
+    background-color: transparent;
+    color: #ff4757;
+    border: 1px solid #ff4757;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-remover:hover {
+    background-color: #ff4757;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.6);
 }
